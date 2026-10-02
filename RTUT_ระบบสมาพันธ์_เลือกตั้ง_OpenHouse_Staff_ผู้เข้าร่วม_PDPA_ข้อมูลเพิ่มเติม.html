@@ -1716,6 +1716,11 @@
 <div class="toast" id="toast"></div>
 
 <script>
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseKey = process.env.SUPABASE_ANON_KEY
+export const supabase = createClient(supabaseUrl, supabaseKey)
 /* ---------------- state & storage helpers ---------------- */
 let currentMemberId = null; // phone number currently loaded in profile form
 let currentPhotoData = null; // base64 data URL of the pending profile photo
